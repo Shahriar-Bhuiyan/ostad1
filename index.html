@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart with Promo Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold">My Shop</h1>
+        <div>
+            <button id="cart-btn" class="relative">
+                🛒 Cart
+                <span id="cart-count"
+                    class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">0</span>
+            </button>
+        </div>
+    </header>
+
+   
+    <main class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="product-list">
+       
+    </main>
+
+
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center ">
+        <div class="bg-white w-96 p-6 rounded-lg shadow-lg">
+            <h2 class="text-lg font-bold mb-4">Your Cart</h2>
+            <div id="cart-items" class="space-y-2"></div>
+
+  
+            <div class="mt-4">
+                <p class="font-bold">Total: $<span id="cart-total">0</span></p>
+            </div>
+
+         
+            <div class="mt-4">
+                <input type="text" id="promo-code" placeholder="Enter Promo Code" class="border rounded w-full p-2">
+                <button id="apply-promo" class="bg-blue-500 text-white px-3 py-1 rounded mt-2 w-full">Apply Promo
+                    Code</button>
+                <p id="promo-message" class="text-sm text-red-500 mt-1"></p>
+            </div>
+
+            <div class="flex justify-between mt-4">
+                <button id="clear-cart" class="bg-red-500 text-white px-3 py-1 rounded">Clear</button>
+                <button id="checkout" class="bg-green-500 text-white px-3 py-1 rounded">Checkout</button>
+                <button id="close-cart" class="bg-gray-500 text-white px-3 py-1 rounded">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
